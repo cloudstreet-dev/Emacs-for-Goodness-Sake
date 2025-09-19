@@ -105,6 +105,7 @@ nil                ; false/empty
 ;; Optional arguments
 (defun greet-optional (&optional name)
   "Greet NAME, or 'Friend' if not provided."
+  (interactive "MName (optional): ")
   (message "Hello, %s!" (or name "Friend")))
 ```
 
@@ -264,8 +265,8 @@ nil                ; false/empty
   (forward-line 1))
 
 ;; Map functions
-(mapcar '1+ '(1 2 3))            ; => (2 3 4)
-(mapcar 'buffer-name (buffer-list))
+(mapcar #'1+ '(1 2 3))            ; => (2 3 4)
+(mapcar #'buffer-name (buffer-list))
 ```
 
 ### Practical Examples
@@ -340,6 +341,7 @@ nil                ; false/empty
 
 ;; Macro for defining similar functions
 (defmacro define-toggle (name variable)
+  "Define a toggle function for VARIABLE."
   `(defun ,name ()
      ,(format "Toggle %s." variable)
      (interactive)
@@ -449,7 +451,7 @@ Here's a simple package that adds word count to the mode line:
   (let ((words 0))
     (save-excursion
       (goto-char (point-min))
-      (while (forward-word 1)
+      (while (re-search-forward "\\b\\w+\\b" nil t)
         (setq words (1+ words))))
     words))
 
@@ -466,8 +468,9 @@ Here's a simple package that adds word count to the mode line:
       (progn
         (word-count-update-mode-line)
         (setq word-count-mode-update-timer
-              (run-with-idle-timer 1 t 'word-count-update-mode-line)))
-    (cancel-timer word-count-mode-update-timer)
+              (run-with-idle-timer 1 t #'word-count-update-mode-line)))
+    (when word-count-mode-update-timer
+      (cancel-timer word-count-mode-update-timer))
     (setq mode-line-misc-info nil)))
 
 (provide 'word-count-mode)

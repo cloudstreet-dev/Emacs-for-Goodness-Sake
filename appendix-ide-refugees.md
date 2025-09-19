@@ -20,13 +20,13 @@ This isn't just semantics. In VS Code, you're using someone else's editor with y
 |---------|-------|---------------|
 | Command Palette (`Cmd+Shift+P`) | `M-x` | Built-in |
 | File Explorer | Dired / Treemacs | Built-in / treemacs |
-| Quick Open (`Cmd+P`) | `C-x C-f` with completion | consult/ivy/helm |
-| Find in Files (`Cmd+Shift+F`) | `M-x rg` or projectile-grep | ripgrep/projectile |
+| Quick Open (`Cmd+P`) | `C-x C-f` or `SPC SPC` | consult/projectile |
+| Find in Files (`Cmd+Shift+F`) | `M-x rg` or `C-c p s r` | ripgrep/projectile |
 | Git Integration | Magit | magit |
-| Terminal | `M-x ansi-term` or vterm | Built-in / vterm |
+| Terminal | `M-x vterm` or `M-x eshell` | vterm / eshell |
 | Extensions | Packages | MELPA |
 | settings.json | init.el | Built-in |
-| Intellisense | LSP-mode | lsp-mode |
+| IntelliSense | LSP-mode + Company | lsp-mode + company |
 | Debugger | DAP-mode | dap-mode |
 | Markdown Preview | `C-c C-c p` in markdown-mode | markdown-mode |
 | Zen Mode | writeroom-mode | writeroom-mode |
@@ -89,7 +89,7 @@ But try to learn the Emacs way—it's more powerful.
 ;; Quick file switching
 (use-package consult-projectile
   :ensure t
-  :bind ("C-p" . consult-projectile-find-file))
+  :bind ("C-x p f" . consult-projectile-find-file))
 ```
 
 #### The File Tree You're Missing
@@ -174,7 +174,7 @@ If you're coming from Vim (or VS Code with Vim mode):
 (use-package consult
   :ensure t
   :bind (("C-s" . consult-line)           ; Search in buffer
-         ("C-S-s" . consult-ripgrep)       ; Search in project
+         ("M-s g" . consult-ripgrep)        ; Search in project
          ("C-x b" . consult-buffer)        ; Switch buffer
          ("M-y" . consult-yank-pop)))      ; Clipboard history
 ```
@@ -298,7 +298,11 @@ Here's a config that makes Emacs feel like a modern IDE:
 (use-package lsp-mode
   :ensure t
   :commands lsp
-  :hook ((prog-mode . lsp-deferred))
+  :hook ((typescript-mode . lsp-deferred)
+         (js2-mode . lsp-deferred)
+         (python-mode . lsp-deferred)
+         (rust-mode . lsp-deferred)
+         (go-mode . lsp-deferred))
   :config
   (setq lsp-headerline-breadcrumb-enable t))
 
@@ -374,7 +378,7 @@ Here's a config that makes Emacs feel like a modern IDE:
 3. Replace all
 
 **Emacs**:
-1. `M-x projectile-replace` or `M-x rg`
+1. `C-c p r` (projectile-replace) or `M-x rg`
 2. Enter search and replacement
 3. `!` to replace all or `y/n` for each
 
@@ -433,9 +437,9 @@ If after 30 days you don't see the appeal, you can always go back. But fair warn
 
 ### Resources for Refugees
 
-- **Doom Emacs**: Pre-configured for IDE users
-- **Spacemacs**: If you like layers and conventions
-- **Prelude**: Gentle enhancements
+- **Doom Emacs**: Pre-configured for IDE users (popular choice)
+- **Spacemacs**: Vim-style with layers (less active development)
+- **Prelude**: Gentle enhancements (good for beginners)
 - **System Crafters**: YouTube channel for modern Emacs
 - **Emacs Rocks**: Short videos showing cool features
 - **Mastering Emacs**: The book for going deep

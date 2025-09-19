@@ -17,7 +17,7 @@ brew install emacs
 Or if you want the GUI version with native compilation (faster, shinier):
 ```bash
 brew tap d12frosted/emacs-plus
-brew install emacs-plus@29 --with-native-comp
+brew install emacs-plus@30 --with-native-comp
 ```
 
 #### Linux

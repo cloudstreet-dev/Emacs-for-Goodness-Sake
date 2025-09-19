@@ -33,7 +33,7 @@ This book takes you on a journey from basic text editing to using Emacs as your 
 
 ## 🚀 Getting Started
 
-1. **Install Emacs** (version 27 or later recommended):
+1. **Install Emacs** (version 28 or later recommended):
    ```bash
    # macOS
    brew install emacs
@@ -42,7 +42,8 @@ This book takes you on a journey from basic text editing to using Emacs as your 
    sudo apt-get install emacs
    
    # Windows
-   # Download from https://www.gnu.org/software/emacs/download.html
+   winget install GNU.Emacs
+   # Or download from https://www.gnu.org/software/emacs/download.html
    ```
 
 2. **Start with Chapter 1** if you're new to Emacs
@@ -101,7 +102,7 @@ As long as you provide attribution and share under the same license.
 - The Emacs community for decades of packages, documentation, and support
 - Richard Stallman for creating this magnificent beast
 - Every Emacs user who shared their config online
-- You, for being curious enough to learn Emacs in 2024
+- You, for being curious enough to learn Emacs in 2025
 
 ## 📬 Contact
 
@@ -113,6 +114,15 @@ Questions? Suggestions? Emacs war stories? Open an issue on GitHub or reach out 
 ## 🚦 Status
 
 This book is **complete** but will continue to evolve. Emacs never stops growing, and neither should this guide.
+
+### Version History
+
+- **v1.0.0** (2025-01-19) - Initial release with comprehensive technical review
+  - Fixed deprecated package references
+  - Updated keybindings and commands for accuracy
+  - Enhanced security configurations (TLS for IRC)
+  - Improved cross-platform compatibility
+  - Modernized Elisp code examples
 
 ---
 

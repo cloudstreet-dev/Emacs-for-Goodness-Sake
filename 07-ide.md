@@ -137,10 +137,11 @@ But that's just the beginning:
   :hook (company-mode . company-box-mode))
 
 ;; Language specific backends
-(use-package company-tabnine  ; AI completions
-  :ensure t
-  :config
-  (add-to-list 'company-backends #'company-tabnine))
+;; Note: company-tabnine is deprecated, use copilot.el or codeium.el for AI completions
+;; Example with codeium:
+;; (use-package codeium
+;;   :init
+;;   (add-to-list 'completion-at-point-functions #'codeium-completion-at-point))
 ```
 
 ### Flycheck: Real-time Error Checking

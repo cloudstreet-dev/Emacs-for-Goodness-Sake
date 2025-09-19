@@ -63,7 +63,7 @@ Emacs has a built-in counter for macros:
 3. Type: `User: `
 4. `C-e` - End of line
 5. Type: ` (ID: `
-6. `F3` - Insert counter (starts at 0)
+6. `C-x C-k C-i` - Insert counter (starts at 0)
 7. Type: `)`
 8. `C-n` - Next line
 9. `F4` - Stop recording
@@ -116,7 +116,7 @@ This generates:
 
 ```elisp
 (fset 'my-awesome-macro
-   (kmacro-lambda-form [?\C-a ?U ?s ?e ?r ?: ?\  ?\C-e] 0 "%d"))
+   "\C-aUser: \C-e")
 ```
 
 Put this in your config and bind it:
@@ -143,7 +143,7 @@ If search fails, macro stops. Perfect for processing only certain lines.
 A macro that calls itself:
 
 1. Record macro that does something and moves forward
-2. At the end, add `C-x e` (call-last-kbd-macro)
+2. At the end, add `F4` (call-last-kbd-macro)
 3. Stop recording
 4. Run once - it runs forever (until error)
 
@@ -294,9 +294,9 @@ Or with a macro using the counter:
 1. `C-x C-k C-c 1` - Set counter to 1
 2. `F3` - Start macro
 3. Type: `User_`
-4. `C-x C-k C-i` - Insert counter
+4. `C-x C-k C-i` - Insert counter (formatted with leading zeros)
 5. Type: `,user`
-6. `C-x C-k C-i` - Insert counter
+6. `C-x C-k C-i` - Insert counter again
 7. Type: `@example.com`
 8. `RET` - Newline
 9. `F4` - Stop
@@ -316,7 +316,7 @@ C-x r l    ; List registers
 
 ```
 C-x r + a    ; Append to text register
-C-u C-x r s a ; Append kill to register
+C-u C-x r s a ; Prepend region to register (with prefix arg)
 ```
 
 #### Register Persistence
@@ -349,8 +349,8 @@ Convert function calls from `oldFunc(a, b, c)` to `newFunc(c, b, a)`:
 1. `F3` - Start macro
 2. `C-s oldFunc(` - Find function
 3. `C-f` - Enter parens
-4. `C-M-f` - Forward sexp (select first arg)
-5. `C-x r s 1` - Save to register 1
+4. `C-M-f` - Move forward over first argument
+5. Mark argument and `C-x r s 1` - Save to register 1
 6. `C-d` - Delete comma
 7. Continue for other args...
 8. Reassemble in new order

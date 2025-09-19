@@ -11,8 +11,8 @@ There are several email clients for Emacs, but mu4e (mu-for-emacs) is magical:
 
 ```elisp
 ;; First, install mu and mbsync (outside Emacs)
-;; brew install mu mbsync  # macOS
-;; apt-get install mu4e mbsync  # Debian/Ubuntu
+;; brew install mu isync  # macOS (isync provides mbsync)
+;; apt-get install mu4e isync  # Debian/Ubuntu (isync provides mbsync)
 
 (use-package mu4e
   :ensure nil  ; Installed with mu
@@ -61,7 +61,7 @@ The mu4e workflow:
   :ensure nil  ; Built-in
   :config
   (setq erc-server "irc.libera.chat"
-        erc-port 6667
+        erc-port 6697  ; Use TLS port by default
         erc-nick "your-nick"
         erc-user-full-name "Your Name"
         erc-track-shorten-start 8
@@ -81,7 +81,8 @@ The mu4e workflow:
   (add-to-list 'erc-modules 'notifications))
 
 ;; Connect with:
-;; M-x erc-tls  ; For SSL/TLS connections
+;; M-x erc-tls  ; For SSL/TLS connections (recommended)
+;; M-x erc      ; For plain connections (not recommended)
 ```
 
 ERC commands:
@@ -177,14 +178,8 @@ Elfeed workflow:
    :client-secret "your-client-secret"
    :token "your-token"))
 
-;; Or use the newer emacs-slack alternative
-(use-package emacs-slack
-  :ensure t
-  :config
-  (setq emacs-slack-teams
-        '((your-team
-           :token "xoxb-your-token"
-           :cookie "your-cookie"))))
+;; Note: The slack package has been deprecated
+;; Consider using web-based Slack or alternatives like slack-emacs
 ```
 
 ### The Complete Communication Setup
@@ -195,7 +190,8 @@ Here's a full configuration for all your communication needs:
 ;;; Communication Configuration
 
 ;; Email with mu4e
-(require 'mu4e)
+;; Note: mu4e should be loaded through package configuration
+;; (require 'mu4e)  ; Only if not using use-package
 (setq mu4e-maildir "~/Maildir"
       mu4e-get-mail-command "mbsync -a"
       mu4e-update-interval 300
@@ -267,7 +263,8 @@ Here's a full configuration for all your communication needs:
 ```elisp
 ;; Capture emails to org
 (use-package org-mu4e
-  :ensure nil
+  :ensure nil  ; Part of mu4e installation
+  :after mu4e
   :config
   (setq org-mu4e-link-query-in-headers-mode nil))
 

@@ -96,7 +96,7 @@ Want to rename 100 files? Easy:
 
 Example: Add date prefix to all files:
 ```
-M-% ^RET 2024-01-20_RET !
+M-% ^ RET 2024-01-20_ RET !
 ```
 
 ### Dired-x: Extended Features
@@ -105,7 +105,7 @@ Add to your config:
 
 ```elisp
 (require 'dired-x)
-(setq dired-omit-mode t)  ; Hide unimportant files
+(add-hook 'dired-mode-hook 'dired-omit-mode)  ; Enable omit mode
 (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$")
 ```
 
@@ -121,6 +121,7 @@ New powers:
 ;; Auto-revert dired buffers
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
+(add-hook 'dired-mode-hook 'auto-revert-mode)
 
 ;; Preview files
 (use-package peep-dired
@@ -224,9 +225,10 @@ Mark files by content:
 #### Async Operations
 
 ```elisp
-(use-package dired-async
-  :ensure nil  ; Part of async package
-  :hook (dired-mode . dired-async-mode))
+(use-package async
+  :ensure t
+  :config
+  (dired-async-mode 1))
 ```
 
 Now large copy/move operations won't freeze Emacs.
@@ -238,7 +240,7 @@ Now large copy/move operations won't freeze Emacs.
 (use-package dired
   :ensure nil
   :custom
-  (dired-listing-switches "-agho --group-directories-first")
+  (dired-listing-switches "-alhF --group-directories-first")
   (dired-omit-files "^\\.[^.].*")
   (dired-omit-verbose nil)
   (dired-dwim-target t)  ; Suggest other dired buffer as target
@@ -251,8 +253,9 @@ Now large copy/move operations won't freeze Emacs.
   ;; Auto refresh
   (setq global-auto-revert-non-file-buffers t)
   
-  ;; Human readable sizes
-  (setq dired-listing-switches "-alh --group-directories-first"))
+  ;; Human readable sizes and better formatting
+  (when (executable-find "ls")
+    (setq dired-listing-switches "-alhF --group-directories-first")))
 ```
 
 ### Custom Dired Commands
@@ -263,8 +266,10 @@ Now large copy/move operations won't freeze Emacs.
   "Open file with default application."
   (interactive)
   (let ((file (dired-get-filename nil t)))
-    (call-process "open" nil 0 nil file)))  ; macOS
-    ; (call-process "xdg-open" nil 0 nil file)))  ; Linux
+    (cond
+     ((eq system-type 'darwin) (call-process "open" nil 0 nil file))
+     ((eq system-type 'gnu/linux) (call-process "xdg-open" nil 0 nil file))
+     (t (message "Unsupported system")))))
 
 (define-key dired-mode-map (kbd "E") 'dired-open-file)
 
