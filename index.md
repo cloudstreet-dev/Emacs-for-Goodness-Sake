@@ -12,7 +12,7 @@ Welcome to a different kind of Emacs book—one that acknowledges the learning c
 
 ## 📚 Table of Contents
 
-<div class="toc">
+<div class="toc" markdown="1">
 
 1. **[Introduction]({{ site.baseurl }}/chapters/00-introduction/)** - Why Emacs? Why now? Why this book?
 2. **[Chapter 1: First Steps]({{ site.baseurl }}/chapters/01-first-steps/)** - Opening, editing, and saving files without having a breakdown
@@ -93,7 +93,7 @@ Created by the Emacs community for anyone curious about this magnificent beast o
 
 ---
 
-<div style="text-align: center; font-style: italic; margin: 3rem 0;">
+<div style="text-align: center; font-style: italic; margin: 3rem 0;" markdown="1">
 
 "Emacs outshines all other editing software in approximately the same way that the noonday sun does the stars. It is not just bigger and brighter; it simply makes everything else vanish."
 —Neal Stephenson
@@ -102,7 +102,7 @@ Created by the Emacs community for anyone curious about this magnificent beast o
 
 ---
 
-<div style="text-align: center; margin: 2rem 0;">
+<div style="text-align: center; margin: 2rem 0;" markdown="1">
 
 ### Ready to begin?
 
