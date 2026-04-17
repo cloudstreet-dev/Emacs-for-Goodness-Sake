@@ -9,19 +9,19 @@ This book takes you on a journey from basic text editing to using Emacs as your 
 
 ### Table of Contents
 
-1. **[Introduction](00-introduction.md)** - Why Emacs? Why now? Why this book?
-2. **[Chapter 1: First Steps](01-first-steps.md)** - Opening, editing, and saving files without having a breakdown
-3. **[Chapter 2: The Emacs Philosophy](02-philosophy.md)** - Understanding buffers, windows, and frames
-4. **[Chapter 3: Movement and Key Bindings](03-keybindings.md)** - Making your fingers dance across the keyboard
-5. **[Chapter 4: Configuration Basics](04-configuration.md)** - Making Emacs yours with init.el
-6. **[Chapter 5: Package Management](05-packages.md)** - Standing on the shoulders of giants with MELPA
-7. **[Chapter 6: Org-mode](06-org-mode.md)** - Your life in plain text
-8. **[Chapter 7: Emacs as an IDE](07-ide.md)** - LSP, debugging, and modern development
-9. **[Chapter 8: Communication Hub](08-communication.md)** - Email, IRC, RSS, and never leaving Emacs
-10. **[Chapter 9: Just Enough Elisp](09-elisp.md)** - Programming your editor
-11. **[Chapter 10: Dired](10-dired.md)** - File management as text editing
-12. **[Chapter 11: Macros and Registers](11-macros-registers.md)** - Automation for humans
-13. **[Appendix: Survival Guide for IDE Refugees](appendix-ide-refugees.md)** - Making the transition smooth
+1. **[Introduction](_chapters/00-introduction.md)** - Why Emacs? Why now? Why this book?
+2. **[Chapter 1: First Steps](_chapters/01-first-steps.md)** - Opening, editing, and saving files without having a breakdown
+3. **[Chapter 2: The Emacs Philosophy](_chapters/02-philosophy.md)** - Understanding buffers, windows, and frames
+4. **[Chapter 3: Movement and Key Bindings](_chapters/03-keybindings.md)** - Making your fingers dance across the keyboard
+5. **[Chapter 4: Configuration Basics](_chapters/04-configuration.md)** - Making Emacs yours with init.el
+6. **[Chapter 5: Package Management](_chapters/05-packages.md)** - Standing on the shoulders of giants with MELPA
+7. **[Chapter 6: Org-mode](_chapters/06-org-mode.md)** - Your life in plain text
+8. **[Chapter 7: Emacs as an IDE](_chapters/07-ide.md)** - LSP, debugging, and modern development
+9. **[Chapter 8: Communication Hub](_chapters/08-communication.md)** - Email, IRC, RSS, and never leaving Emacs
+10. **[Chapter 9: Just Enough Elisp](_chapters/09-elisp.md)** - Programming your editor
+11. **[Chapter 10: Dired](_chapters/10-dired.md)** - File management as text editing
+12. **[Chapter 11: Macros and Registers](_chapters/11-macros-registers.md)** - Automation for humans
+13. **[Appendix: Survival Guide for IDE Refugees](_chapters/appendix-ide-refugees.md)** - Making the transition smooth
 
 ## 🎯 Who This Book Is For
 
@@ -128,7 +128,9 @@ This book is **complete** but will continue to evolve. Emacs never stops growing
 
 *"Emacs is the only software that I've used for 30 years and am still discovering new features."*
 
-Start reading with the [Introduction](00-introduction.md) →
+Start reading with the [Introduction](_chapters/00-introduction.md) →
+
+Or read the published site at **[cloudstreet-dev.github.io/Emacs-for-Goodness-Sake](https://cloudstreet-dev.github.io/Emacs-for-Goodness-Sake/)**.
 
 ---
 
