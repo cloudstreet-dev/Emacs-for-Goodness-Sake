@@ -1,3 +1,7 @@
+---
+title: "Chapter 7: Emacs as an IDE"
+---
+
 # Chapter 7: Emacs as an IDE
 ## Who Needs Visual Studio When You Have Actual Magic?
 

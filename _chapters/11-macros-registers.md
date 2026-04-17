@@ -1,3 +1,7 @@
+---
+title: "Chapter 11: Macros and Registers"
+---
+
 # Chapter 11: Macros and Registers
 ## Automation for Humans (And Cyborgs)
 

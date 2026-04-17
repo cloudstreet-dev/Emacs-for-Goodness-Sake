@@ -1,3 +1,7 @@
+---
+title: "Appendix: Survival Guide for IDE Refugees"
+---
+
 # Appendix: Survival Guide for IDE Refugees
 ## From VS Code to Emacs Without Losing Your Mind
 

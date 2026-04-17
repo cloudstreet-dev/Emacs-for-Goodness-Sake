@@ -1,3 +1,7 @@
+---
+title: "Chapter 5: Package Management"
+---
+
 # Chapter 5: Package Management
 ## Standing on the Shoulders of Giants
 

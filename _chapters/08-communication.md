@@ -1,3 +1,7 @@
+---
+title: "Chapter 8: Communication Hub"
+---
+
 # Chapter 8: Communication Hub
 ## Never Leave Emacs Again (Seriously, Why Would You?)
 

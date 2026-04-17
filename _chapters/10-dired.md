@@ -1,3 +1,7 @@
+---
+title: "Chapter 10: Dired - The Directory Editor"
+---
+
 # Chapter 10: Dired - The Directory Editor
 ## File Management for People Who Think File Managers Are Beneath Them
 

@@ -1,3 +1,7 @@
+---
+title: "Chapter 4: Configuration Basics"
+---
+
 # Chapter 4: Configuration Basics
 ## Making Emacs Yours (And Only Yours)
 

@@ -1,3 +1,7 @@
+---
+title: "Chapter 2: The Emacs Philosophy"
+---
+
 # Chapter 2: The Emacs Philosophy
 ## Or: Why Everything Is a Buffer and That's Actually Genius
 

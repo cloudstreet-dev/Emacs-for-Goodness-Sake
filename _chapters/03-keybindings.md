@@ -1,3 +1,7 @@
+---
+title: "Chapter 3: Movement and Key Bindings"
+---
+
 # Chapter 3: Movement and Key Bindings
 ## Your Fingers Will Learn to Dance
 

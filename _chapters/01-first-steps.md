@@ -1,3 +1,7 @@
+---
+title: "Chapter 1: First Steps Into the Infinite"
+---
+
 # Chapter 1: First Steps Into the Infinite
 ## Or: How to Open, Edit, and Save a File Without Having a Breakdown
 

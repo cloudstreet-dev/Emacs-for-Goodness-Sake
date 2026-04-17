@@ -1,3 +1,7 @@
+---
+title: "Chapter 6: Org-mode"
+---
+
 # Chapter 6: Org-mode
 ## Your Life in Plain Text
 

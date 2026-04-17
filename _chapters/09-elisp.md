@@ -1,3 +1,7 @@
+---
+title: "Chapter 9: Just Enough Elisp"
+---
+
 # Chapter 9: Just Enough Elisp
 ## Programming Your Editor (Or: How to Become a Wizard)
 

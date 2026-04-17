@@ -1,3 +1,7 @@
+---
+title: "Emacs for Goodness' Sake"
+---
+
 # Emacs for Goodness' Sake
 ## A Gentle Journey into the Operating System Disguised as a Text Editor
 
