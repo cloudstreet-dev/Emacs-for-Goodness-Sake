@@ -196,7 +196,7 @@ Let's put it all together. Here's a simple workflow:
 9. Save all modified files: `C-x s`
 10. Quit: `C-x C-c`
 
-Congratulations! You're now more productive in Emacs than 50% of people who try it and give up immediately.
+Congratulations! You're now more productive in Emacs than 100% of people who try it and give up immediately.
 
 ### What's Next?
 
