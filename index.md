@@ -3,9 +3,6 @@ layout: default
 title: Home
 ---
 
-# Emacs for Goodness' Sake
-## A Gentle Journey into the Operating System Disguised as a Text Editor
-
 Welcome to a different kind of Emacs book—one that acknowledges the learning curve while celebrating the view from the top. This book is for anyone who's heard that Emacs can do everything but doesn't know where to start, especially those coming from modern IDEs like VS Code, IntelliJ, or Sublime Text.
 
 ---
