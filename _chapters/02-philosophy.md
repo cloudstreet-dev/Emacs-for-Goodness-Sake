@@ -181,9 +181,9 @@ All without leaving Emacs. All using the same key bindings. All searchable with 
 ### The Kill Ring: Copy/Paste on Steroids
 
 Since we're talking philosophy, let's discuss the kill ring. In Emacs:
-- "Kill" means cut
-- "Yank" means paste
-- There's no simple "copy"—you "kill" then immediately "yank" back
+- "Kill" (`C-w`) means cut
+- "Yank" (`C-y`) means paste
+- Copy is `M-w` (`kill-ring-save`) — it saves the region to the kill ring without removing it
 
 But here's the beautiful part: Emacs remembers everything you've killed in a ring. Kill five different things, then cycle through them when yanking:
 
