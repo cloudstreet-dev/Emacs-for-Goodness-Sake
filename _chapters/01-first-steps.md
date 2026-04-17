@@ -217,5 +217,4 @@ And remember: every Emacs user was once where you are now, staring at this bizar
 
 ---
 
-*"Emacs is the only software that I've used for 30 years and am still discovering new features."*
-—Anonymous Emacs User (could be any of us, really)
+*Longtime Emacs users often say they're still discovering new features decades in — and that's part of the appeal.*

@@ -126,7 +126,7 @@ This book is **complete** but will continue to evolve. Emacs never stops growing
 
 ---
 
-*"Emacs is the only software that I've used for 30 years and am still discovering new features."*
+*Longtime Emacs users often say they're still discovering new features decades in — and that's part of the appeal.*
 
 Start reading with the [Introduction](_chapters/00-introduction.md) →
 
