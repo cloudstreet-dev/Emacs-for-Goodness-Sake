@@ -56,7 +56,9 @@ When you see `C-x s`, that means:
 2. Release Control
 3. Press s by itself
 
-🤔 **Why Though?** The "Meta" key comes from ancient Lisp machines that had actual Meta keys. Your keyboard doesn't have one, so we use Alt. Or Escape. Yes, pressing Escape and then the key also works. No, I don't know anyone who does it that way. Yes, it's there if you're using Emacs on your phone for some reason.
+🤔 **Why Though?** The "Meta" key comes from ancient Lisp machines that had actual Meta keys. Your keyboard doesn't have one, so on modern hardware `Alt` (or `Cmd` on macOS) plays the role of Meta as a held-down modifier — `Alt+x` is what Emacs calls `M-x`.
+
+But `Esc` isn't just a fallback — it's a second, distinct way to get Meta that predates Alt entirely. On the terminals Emacs grew up on, there were no modifier keys besides `Shift`, so Meta was encoded as `Esc` followed by the next key. You *press and release* `Esc`, then press the key: `Esc x` is `M-x`, `Esc Control+s` is `M-C-s`. That prefix-style form still works everywhere Emacs runs, and it's genuinely useful when your window manager swallows `Alt` (e.g. `Alt+Space` on Gnome) — `Esc Space` gets through as `M-SPC`.
 
 ### Actually Opening a File
 
