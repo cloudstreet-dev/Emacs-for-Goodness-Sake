@@ -1,0 +1,58 @@
+title: "Emacs for Goodness' Sake"
+description: "A Gentle Journey into the Operating System Disguised as a Text Editor"
+author: "David Conner"
+url: "https://cloudstreet-dev.github.io"
+baseurl: "/Emacs-for-Goodness-Sake"
+
+# Theme settings
+theme: minima
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: elisp
+
+# Collections
+collections:
+  chapters:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "chapter"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Navigation order
+chapter_order:
+  - "00-introduction"
+  - "01-first-steps"
+  - "02-philosophy"
+  - "03-keybindings"
+  - "04-configuration"
+  - "05-packages"
+  - "06-org-mode"
+  - "07-ide"
+  - "08-communication"
+  - "09-elisp"
+  - "10-dired"
+  - "11-macros-registers"
+  - "appendix-ide-refugees"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github
+  - LICENSE

@@ -1,0 +1,31 @@
+{% assign chapters = site.chapters | sort: "path" %}
+{% assign current_index = nil %}
+
+{% for chapter in chapters %}
+  {% if chapter.url == page.url %}
+    {% assign current_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% if current_index %}
+  <nav class="chapter-nav">
+    <div class="nav-links">
+      {% if current_index > 0 %}
+        {% assign prev_chapter = chapters[current_index | minus: 1] %}
+        <a href="{{ prev_chapter.url | relative_url }}" class="nav-prev">
+          ← Previous: {{ prev_chapter.path | split: '/' | last | remove: '.md' | replace: '-', ' ' | capitalize }}
+        </a>
+      {% endif %}
+
+      <a href="{{ '/' | relative_url }}" class="nav-home">Table of Contents</a>
+
+      {% assign next_index = current_index | plus: 1 %}
+      {% if next_index < chapters.size %}
+        {% assign next_chapter = chapters[next_index] %}
+        <a href="{{ next_chapter.url | relative_url }}" class="nav-next">
+          Next: {{ next_chapter.path | split: '/' | last | remove: '.md' | replace: '-', ' ' | capitalize }} →
+        </a>
+      {% endif %}
+    </div>
+  </nav>
+{% endif %}
